@@ -2,8 +2,6 @@
 
 ![image](https://user-images.githubusercontent.com/39266201/121051691-094a1480-c790-11eb-9c41-779f4bb7ee89.png)
 
-## Available Scripts
-
 In the project directory, you can run:
 
 ### `yarn install`
