@@ -7,7 +7,6 @@ import "./styles.css";
 import { Wrapper, Theme, Display, Controllers, Calculator } from "./styles";
 
 function App() {
-  const [result, setResult] = useState("0");
   const [value, setValue] = useState<string>("0");
   const buttonSuperior = ["C", "%", "<<"];
   const buttonsNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -42,14 +41,13 @@ function App() {
     if (newValue === value[value.length - 1]) return;
 
     if (newValue === "C") {
-      setResult("0");
       setValue("0");
       return;
     }
 
     if (newValue === "=") {
       if (value.length && !lastCharAllConditions) {
-        setResult(eval(String(value)));
+        setValue(eval(String(value)));
       }
       return;
     }
@@ -70,10 +68,6 @@ function App() {
     return setValue(value + newValue);
   };
 
-  const formatResult = (value: string) => {
-    return Number(value);
-  };
-
   return (
     <Wrapper tema={theme}>
       <Calculator tema={theme}>
@@ -83,10 +77,7 @@ function App() {
           </button>
         </Theme>
 
-        <Display>
-          <div className="show-prev">{value}</div>
-          <div className="show-result">{formatResult(result)}</div>
-        </Display>
+        <Display>{value}</Display>
 
         <Controllers tema={theme}>
           <div className="column-left">
@@ -124,6 +115,10 @@ function App() {
           </div>
         </Controllers>
       </Calculator>
+      <span>
+        Desenvolvido por{" "}
+        <a href="https://www.linkedin.com/in/guifsantos/">Guilherme Santos</a>
+      </span>
     </Wrapper>
   );
 }

@@ -20,10 +20,11 @@ export const Wrapper = styled.main<Tema>`
   justify-content: center;
   align-content: center;
   align-items: center;
-  height: 100vh;
+  flex-direction: column;
   color: ${(props) => (props.tema ? "white" : "black")};
 
-  /* BUTTONS */
+  margin: 20px 0;
+
   button {
     border: none;
     background-color: transparent;
@@ -41,6 +42,21 @@ export const Wrapper = styled.main<Tema>`
     transition: all 0.25s;
     opacity: 0.8;
   }
+
+  span {
+    margin-top: 20px;
+    font-size: 0.75rem;
+    color: white;
+
+    a {
+      transition: all 0.25s;
+      color: white;
+
+      &:hover {
+        color: black;
+      }
+    }
+  }
 `;
 
 export const Theme = styled.div`
@@ -57,19 +73,17 @@ export const Theme = styled.div`
 export const Display = styled.div`
   height: 100px;
   display: flex;
-  flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
+  flex-direction: column;
   padding-right: 10px;
+  overflow: hidden;
 
-  .show-prev {
-    font-size: 1em;
-    letter-spacing: 0.25em;
-  }
-
-  .show-result {
-    font-size: 2.5em;
-  }
+  font-size: 2em;
+  letter-spacing: 0.25em;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  word-break: break-all;
 `;
 
 export const Controllers = styled.div<Tema>`
@@ -120,11 +134,9 @@ export const Calculator = styled.div<Tema>`
   position: relative;
   background-color: ${(props) =>
     props.tema ? "rgb(46, 46, 46)" : "rgb(200, 200, 200)"};
-  min-width: 300px;
-  max-width: 600px;
+  width: 300px;
   border-radius: 1rem;
   padding: 60px 30px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
-
   animation: 0.5s ${animaChanges} cubic-bezier(0.645, 0.045, 0.355, 1);
 `;
