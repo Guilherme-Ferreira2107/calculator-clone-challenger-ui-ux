@@ -24,6 +24,10 @@ button:hover svg {
   opacity: 0.8;
 }
 
+body {
+  background-color: rgb(250, 60, 60);
+}
+
 /* MAIN */
 .container-main {
   display: flex;
@@ -31,7 +35,6 @@ button:hover svg {
   align-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgb(250, 60, 60);
   color: white;
 }
 
