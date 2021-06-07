@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { RiDeleteBack2Fill } from "react-icons/ri";
 import { VscColorMode, VscChromeClose } from "react-icons/vsc";
+import "vanilla-tilt";
 
 import "./styles.css";
 
@@ -74,7 +75,7 @@ function App() {
 
   return (
     <div className="container-main">
-      <div className="calculator">
+      <div className="calculator" data-tilt>
         <div className="theme">
           <button>
             <VscColorMode />
