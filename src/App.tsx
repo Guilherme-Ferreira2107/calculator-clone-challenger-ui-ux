@@ -2,9 +2,9 @@
 import { useState } from "react";
 import { RiDeleteBack2Fill } from "react-icons/ri";
 import { VscColorMode, VscChromeClose } from "react-icons/vsc";
-import "vanilla-tilt";
 
 import "./styles.css";
+import { Wrapper, Theme, Display, Controllers, Calculator } from "./styles";
 
 function App() {
   const [result, setResult] = useState("0");
@@ -26,6 +26,7 @@ function App() {
     lastCharSub ||
     lastCharSum ||
     lastCharPoint;
+  const [theme, setTheme] = useState(true);
 
   const getValue = (newValue: string) => {
     if (value === "0") {
@@ -74,20 +75,20 @@ function App() {
   };
 
   return (
-    <div className="container-main">
-      <div className="calculator" data-tilt>
-        <div className="theme">
-          <button>
-            <VscColorMode />
+    <Wrapper tema={theme}>
+      <Calculator tema={theme}>
+        <Theme>
+          <button onClick={() => setTheme(!theme)}>
+            <VscColorMode className={theme ? "dark" : "light"} />
           </button>
-        </div>
+        </Theme>
 
-        <div className="display">
+        <Display>
           <div className="show-prev">{value}</div>
           <div className="show-result">{formatResult(result)}</div>
-        </div>
+        </Display>
 
-        <div className="controllers">
+        <Controllers tema={theme}>
           <div className="column-left">
             <div>
               {buttonSuperior.map((item, idx) => (
@@ -121,9 +122,9 @@ function App() {
               </button>
             ))}
           </div>
-        </div>
-      </div>
-    </div>
+        </Controllers>
+      </Calculator>
+    </Wrapper>
   );
 }
 
