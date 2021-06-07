@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Challenger 04 UI/UX - Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://user-images.githubusercontent.com/39266201/121051691-094a1480-c790-11eb-9c41-779f4bb7ee89.png)
 
 ## Available Scripts
 
